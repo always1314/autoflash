@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "*/3 * * * *"
+    - cron: "*/9 * * * *"
 
 jobs:
   autogreen:
@@ -17,7 +17,7 @@ jobs:
       - name: autoflash
         run: |
           git config --local user.email "1849250959@qq.com"
-          git config --local user.name "always1314"
+          git config --local user.name  "always1314"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "Make Program Every Day!"
